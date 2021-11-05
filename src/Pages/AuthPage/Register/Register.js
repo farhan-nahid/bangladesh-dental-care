@@ -1,27 +1,50 @@
 import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import login from '../../../assets/images/login.png';
 import useAuth from '../../../hooks/useAuth';
 
 const Register = () => {
-  const { signInUsingGoogle, signInUsingGitHub } = useAuth();
+  const { signInUsingGoogle, signInUsingGitHub, signUpUsingEmail } = useAuth();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  // set input values
+
+  const handelNameBlur = (e) => setName(e.target.value);
+  const handelEmailBlur = (e) => setEmail(e.target.value);
+  const handelPasswordBlur = (e) => setPassword(e.target.value);
+  const handelConfirmPasswordBlur = (e) => setConfirmPassword(e.target.value);
+
+  // email sign up
+
   const handleEmailSignup = (e) => {
     e.preventDefault();
+    if (password.length < 8) {
+      return toast.error('Your Password Must have 8 letter');
+    } else if (!/(?=.*?[#?!@$%^&*-])/.test(password)) {
+      return toast.error('Password should be at least 1 Spacial character');
+    } else if (password !== confirmPassword) {
+      return toast.error('Password Not Matched');
+    } else {
+      signUpUsingEmail(name, email, password);
+    }
   };
+
+  //google sign in
 
   const handleGoogleSignIn = () => {
-    signInUsingGoogle()
-      // .then()
-      .catch((err) => toast.error(err.message));
+    signInUsingGoogle().catch((err) => toast.error(err.message));
   };
 
+  // github sign in
+
   const handleGitHubSignIn = () => {
-    signInUsingGitHub()
-      // .then()
-      .catch((err) => toast.error(err.message));
+    signInUsingGitHub().catch((err) => toast.error(err.message));
   };
 
   return (
@@ -31,61 +54,61 @@ const Register = () => {
       </div>
       <div className='login__signUp__methods'>
         <form onSubmit={handleEmailSignup}>
-          <div class='single__input'>
+          <div className='single__input'>
             <label htmlFor='registerName'>Your Name</label>
             <input
               id='registerName'
-              class='effect-3'
+              className='effect-3'
               type='text'
               name='name'
               placeholder='Enter Your Full Name'
-              autoComplete='off'
-              spellCheck='false'
+              autoComplete='none'
+              spellCheck='off'
               required
+              onBlur={handelNameBlur}
             />
-            <span class='focus-border'></span>
+            <span className='focus-border'></span>
           </div>
-          <div class='single__input'>
+          <div className='single__input'>
             <label htmlFor='registerEmail'>Your Email</label>
             <input
               id='registerEmail'
-              class='effect-3'
+              className='effect-3'
               type='email'
               placeholder='Enter Your Email'
-              autoComplete='off'
-              spellCheck='false'
-              autoCorrect='off'
+              autoComplete='nope'
+              spellCheck='off'
               required
+              onBlur={handelEmailBlur}
             />
-            <span class='focus-border'></span>
+            <span className='focus-border'></span>
           </div>
-          <div class='single__input'>
+          <div className='single__input'>
             <label htmlFor='registerPassword'>Your Password</label>
             <input
               id='registerPassword'
-              class='effect-3'
+              className='effect-3'
               type='password'
               placeholder='Enter Your Password'
-              autoComplete='off'
-              spellCheck='false'
-              autoCorrect='off'
+              autoComplete='nope'
               required
+              onBlur={handelPasswordBlur}
             />
-            <span class='focus-border'></span>
+            <span className='focus-border'></span>
           </div>
-          <div class='single__input'>
+          <div className='single__input'>
             <label htmlFor='confirmPassword'>Confirm Password</label>
             <input
               id='confirmPassword'
-              class='effect-3'
+              className='effect-3'
               type='password'
               placeholder='Re Type Your Password'
-              autoComplete='off'
+              autoComplete='nope'
               spellCheck='false'
-              autoCorrect='off'
               required
+              onBlur={handelConfirmPasswordBlur}
             />
-            <span class='focus-border'></span>
+            <span className='focus-border'></span>
           </div>
           <input type='submit' value='Register' />
         </form>

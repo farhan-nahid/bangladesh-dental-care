@@ -26,6 +26,16 @@
   border-left: 1px solid lightgrey;
 }
 
+.grid__container input[type='text'],
+.grid__container input[type='email'],
+.grid__container input[type='password'] {
+  padding: 10px 10px;
+}
+
+input[type='email']:valid {
+  background-color: #fff !important;
+}
+
 input[type='submit'] {
   width: 100%;
   background-color: #f91944;

@@ -63,6 +63,7 @@ import './NavBar.css';
 
 const NavBar = () => {
   const { loggedInUser, logOut } = useAuth();
+  console.log(loggedInUser);
   return (
     <Navbar className='navbar' expand='lg'>
       <div className='container text-center'>

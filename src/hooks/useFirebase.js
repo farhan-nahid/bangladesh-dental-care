@@ -1,12 +1,16 @@
 import {
+  createUserWithEmailAndPassword,
   getAuth,
   GithubAuthProvider,
   GoogleAuthProvider,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from 'firebase/auth';
 import { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import initializeAuthentication from '../Pages/AuthPage/Firebase/firebase.init';
 
 const useFirebase = () => {
@@ -19,6 +23,32 @@ const useFirebase = () => {
 
   const googleProvider = new GoogleAuthProvider();
   const gitHubProvider = new GithubAuthProvider();
+
+  // create account with email
+
+  const signUpUsingEmail = (name, email, password) => {
+    const loading = toast.loading('Please Wait...');
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((res) => {
+        updateProfile(auth.currentUser, {
+          photoURL: 'https://i.ibb.co/G31TsrC/user.png',
+          displayName: name,
+        });
+        toast.dismiss(loading);
+        toast.success('Your Account is created Successfully');
+        setLoggedInUser(res.user);
+      })
+      .catch((err) => {
+        toast.dismiss(loading);
+        toast.error(err.message);
+      });
+  };
+
+  // email password signIn
+
+  const signInUsingEmail = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
 
   // google signIn
 
@@ -47,7 +77,14 @@ const useFirebase = () => {
     return () => unSubscrived;
   }, [auth]);
 
-  return { loggedInUser, signInUsingGoogle, signInUsingGitHub, logOut };
+  return {
+    loggedInUser,
+    signInUsingGoogle,
+    signInUsingGitHub,
+    logOut,
+    signUpUsingEmail,
+    signInUsingEmail,
+  };
 };
 
 export default useFirebase;

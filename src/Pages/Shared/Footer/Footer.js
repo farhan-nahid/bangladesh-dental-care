@@ -85,7 +85,7 @@ const Footer = () => {
             <h5 className='fw-bold'>STAY IN TOUCH</h5>
             <Form className='d-flex mt-3'>
               <Form.Control type='email' placeholder='Enter Email' />
-              <Button variant='primary'>
+              <Button variant='danger'>
                 <FontAwesomeIcon icon={faPaperPlane} />
               </Button>
             </Form>
