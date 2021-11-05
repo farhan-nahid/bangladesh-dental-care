@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import AuthProvider from './Contexts/AuthProvider';
 import Login from './Pages/AuthPage/Login/Login';
 import Register from './Pages/AuthPage/Register/Register';
 import Home from './Pages/HomePage/Home/Home';
@@ -10,7 +11,7 @@ import NavBar from './Pages/Shared/NavBar/NavBar';
 
 function App() {
   return (
-    <>
+    <AuthProvider>
       <Router>
         <NavBar />
         <Switch>
@@ -22,7 +23,7 @@ function App() {
         </Switch>
         <Footer />
       </Router>
-    </>
+    </AuthProvider>
   );
 }
 

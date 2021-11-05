@@ -1,0 +1,25 @@
+.carousel-indicators button {
+  background-color: #111 !important;
+  width: 5px !important;
+  padding: 5px !important;
+  border-radius: 50% !important;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  display: none !important;
+}
+
+.banner__heading {
+  width: 90%;
+  font-size: 55px;
+  line-height: 70px;
+  letter-spacing: -2px;
+  color: #1f2531;
+  font-weight: 700;
+}
+
+.banner__image {
+  height: 450px !important;
+  object-fit: contain !important;
+}

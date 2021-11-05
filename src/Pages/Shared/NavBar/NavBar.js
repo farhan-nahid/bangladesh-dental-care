@@ -1,4 +1,4 @@
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+/* import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
@@ -49,6 +49,54 @@ const NavBar = () => {
         </ul>
       </nav>
     </div>
+  );
+};
+
+export default NavBar;
+ */
+
+import * as React from 'react';
+import { Nav, Navbar } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
+import './NavBar.css';
+
+const NavBar = () => {
+  const { loggedInUser, logOut } = useAuth();
+  return (
+    <Navbar className='navbar' expand='lg'>
+      <div className='container text-center'>
+        <Navbar.Brand as={NavLink} to='/' className='title'>
+          Doctor Bari
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls='basic-navbar-nav' />
+        <Navbar.Collapse id='basic-navbar-nav'>
+          <Nav className='ms-auto align-items-center'>
+            <Nav.Link as={NavLink} to='/home' activeClassName='active'>
+              Home
+            </Nav.Link>
+            <Nav.Link as={NavLink} to='/about' activeClassName='active'>
+              About
+            </Nav.Link>
+            <Nav.Link as={NavLink} to='/services' activeClassName='active'>
+              Services
+            </Nav.Link>
+            {!loggedInUser ? (
+              <Nav.Link as={NavLink} to='/register' className='main__button'>
+                Register
+              </Nav.Link>
+            ) : (
+              <>
+                <Nav.Link>{loggedInUser.displayName}</Nav.Link>
+                <Nav.Link className='main__button' onClick={logOut}>
+                  Logout
+                </Nav.Link>
+              </>
+            )}
+          </Nav>
+        </Navbar.Collapse>
+      </div>
+    </Navbar>
   );
 };
 

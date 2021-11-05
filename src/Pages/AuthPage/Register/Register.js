@@ -1,12 +1,27 @@
 import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import login from '../../../assets/images/login.png';
+import useAuth from '../../../hooks/useAuth';
 
 const Register = () => {
+  const { signInUsingGoogle, signInUsingGitHub } = useAuth();
   const handleEmailSignup = (e) => {
     e.preventDefault();
+  };
+
+  const handleGoogleSignIn = () => {
+    signInUsingGoogle()
+      // .then()
+      .catch((err) => toast.error(err.message));
+  };
+
+  const handleGitHubSignIn = () => {
+    signInUsingGitHub()
+      // .then()
+      .catch((err) => toast.error(err.message));
   };
 
   return (
@@ -80,11 +95,11 @@ const Register = () => {
 
         <h5 className='other__methods'>OR</h5>
 
-        <button className='google__button'>
+        <button className='google__button' onClick={handleGoogleSignIn}>
           <FontAwesomeIcon icon={faGoogle} />
           Google sign in
         </button>
-        <button className='github__button'>
+        <button className='github__button' onClick={handleGitHubSignIn}>
           <FontAwesomeIcon icon={faGithub} />
           GitHub sign in
         </button>
