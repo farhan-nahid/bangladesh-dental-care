@@ -1,0 +1,159 @@
+.navbar {
+  background-color: #fcf4e0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 15px 0;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.web__title a {
+  font-size: 30px;
+  font-weight: 600;
+  color: #111;
+}
+
+.nav__items {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav__items li {
+  margin-right: 25px;
+}
+
+.nav__items li a {
+  color: #111;
+  transition: color 0.8s ease-in-out;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.nav__items li a:hover {
+  color: #f91944;
+}
+
+.menu__button {
+  font-size: 20px;
+  color: #fff;
+  padding: 8px 15px;
+  display: none;
+  background-color: #f91944;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav__active {
+  color: #f91944 !important;
+}
+
+#click {
+  transition: all 0.8s ease-in-out;
+  display: none;
+}
+
+.navbar__button {
+  list-style-type: none;
+}
+
+.main__button {
+  background-color: #f91944;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  outline: 0;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+
+.main__button:hover {
+  border: 2px solid #f91944;
+  color: #f91944;
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 991px) {
+  .navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1036;
+  }
+
+  nav {
+    margin: 0 auto;
+    padding: 5%;
+    background-color: #fcf4e0;
+  }
+
+  .menu__button {
+    display: block;
+  }
+
+  #click:checked ~ .menu__button i::before {
+    content: '\f00d';
+  }
+
+  .nav__items {
+    position: fixed;
+    top: 80px;
+    display: block;
+    right: -40%;
+    height: 100vh;
+    width: 40%;
+    z-index: 50;
+    padding-left: 2em;
+    transition: all 0.6s ease-in-out;
+    background-color: #fcf4e0;
+  }
+
+  #click:checked ~ .nav__items {
+    right: 0;
+  }
+
+  .nav__items li {
+    margin: 20px 0;
+  }
+
+  .nav__items li a {
+    color: #111;
+  }
+
+  #banner {
+    padding-top: 120px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .nav__items {
+    padding-left: 1.5em;
+  }
+
+  nav {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  .nav__items {
+    padding-left: 1em;
+  }
+}

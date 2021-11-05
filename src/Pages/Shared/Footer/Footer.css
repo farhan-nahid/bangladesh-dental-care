@@ -1,0 +1,33 @@
+footer {
+  background-color: #fcf4e0;
+}
+
+footer a {
+  color: #f91944;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: #f91944;
+  text-decoration: underline;
+}
+
+.social__media {
+  margin-top: 20px;
+  display: flex;
+}
+
+.social__media a {
+  margin-right: 20px;
+  display: block;
+  color: white;
+  background-color: #f919467e;
+  border-radius: 50%;
+  padding: 4px 8px;
+  transition: transform 0.5s ease-in;
+}
+
+.social__media a:hover {
+  transform: rotate(360deg);
+}
