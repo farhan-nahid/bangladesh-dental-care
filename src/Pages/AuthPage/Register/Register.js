@@ -2,7 +2,7 @@ import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import login from '../../../assets/images/login.png';
 import useAuth from '../../../hooks/useAuth';
 
@@ -12,6 +12,9 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const location = useLocation();
+  const history = useHistory();
+  const redirect_URI = location.state?.from || '/';
 
   // set input values
 
@@ -38,13 +41,17 @@ const Register = () => {
   //google sign in
 
   const handleGoogleSignIn = () => {
-    signInUsingGoogle().catch((err) => toast.error(err.message));
+    signInUsingGoogle()
+      .then(() => history.push(redirect_URI))
+      .catch((err) => toast.error(err.message));
   };
 
   // github sign in
 
   const handleGitHubSignIn = () => {
-    signInUsingGitHub().catch((err) => toast.error(err.message));
+    signInUsingGitHub()
+      .then(() => history.push(redirect_URI))
+      .catch((err) => toast.error(err.message));
   };
 
   return (

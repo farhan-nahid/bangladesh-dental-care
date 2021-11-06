@@ -9,7 +9,7 @@ import './Banner.css';
 const Banner = () => {
   const history = useHistory();
   return (
-    <Carousel className='bg-light' pause='false'>
+    <Carousel pause='false'>
       <Carousel.Item>
         <Container>
           <Row className='my-5 py-5 g-5'>

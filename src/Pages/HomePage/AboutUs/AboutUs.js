@@ -13,7 +13,7 @@ const AboutUs = () => {
         </div>
         <div className='content'>
           <div>
-            <h2>We Are Bangladesh Dental Care </h2>
+            <h2>Welcome To Bangladesh Dental Care </h2>
             <p>
               Dentures improve our smiles and overall appearance. Not only do
               they make us look better, but also make our life easier. Enjoy

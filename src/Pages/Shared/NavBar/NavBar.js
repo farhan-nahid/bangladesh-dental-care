@@ -7,7 +7,7 @@ import './NavBar.css';
 
 const NavBar = () => {
   const { loggedInUser, logOut } = useAuth();
-  console.log(loggedInUser);
+
   return (
     <Navbar className='navbar' expand='lg'>
       <Container className=' text-center'>
@@ -27,6 +27,9 @@ const NavBar = () => {
               activeClassName='active__item'
             >
               About Us
+            </Nav.Link>
+            <Nav.Link as={NavLink} to='/doctors' activeClassName='active__item'>
+              Our Doctors
             </Nav.Link>
             <Nav.Link
               as={NavLink}

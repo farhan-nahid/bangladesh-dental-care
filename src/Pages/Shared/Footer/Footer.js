@@ -16,7 +16,7 @@ const Footer = () => {
       <div className='container'>
         <Row>
           <Col lg={3} md={4} sm={6} xs={12}>
-            <h5 className='fw-bold'>Doctor Bari</h5>
+            <h5 className='fw-bold'>Bangladesh Dental Care</h5>
             <div className='social__media'>
               <a
                 href='https://twitter.com/farhan__nahid'

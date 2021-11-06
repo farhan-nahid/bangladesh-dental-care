@@ -1,6 +1,7 @@
 import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import login from '../../../assets/images/login.png';
 import useAuth from '../../../hooks/useAuth';
@@ -11,7 +12,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const location = useLocation();
   const history = useHistory();
-  const { signInUsingEmail } = useAuth();
+  const { signInUsingEmail, signInUsingGoogle, signInUsingGitHub } = useAuth();
   const redirect_URI = location.state?.from || '/';
 
   const handelEmailBlur = (e) => setEmail(e.target.value);
@@ -21,6 +22,18 @@ const Login = () => {
     e.preventDefault();
     signInUsingEmail(email, password);
     history.push(redirect_URI);
+  };
+
+  const handleGoogleSignIn = () => {
+    signInUsingGoogle()
+      .then(() => history.push(redirect_URI))
+      .catch((err) => toast.error(err.message));
+  };
+
+  const handleGitHubSignIn = () => {
+    signInUsingGitHub()
+      .then(() => history.push(redirect_URI))
+      .catch((err) => toast.error(err.message));
   };
 
   return (
@@ -62,11 +75,11 @@ const Login = () => {
 
         <h5 className='other__methods'>OR</h5>
 
-        <button className='google__button'>
+        <button className='google__button' onClick={handleGoogleSignIn}>
           <FontAwesomeIcon icon={faGoogle} />
           Google sign in
         </button>
-        <button className='github__button'>
+        <button className='github__button' onClick={handleGitHubSignIn}>
           <FontAwesomeIcon icon={faGithub} />
           GitHub sign in
         </button>

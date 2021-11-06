@@ -1,0 +1,54 @@
+.doctor__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.all__doctor {
+  margin: 100px auto;
+}
+
+.all__doctor h1 {
+  font-size: 30px;
+  margin-bottom: 30px;
+  position: relative;
+  color: #f91944;
+  font-weight: 600;
+  text-align: center;
+}
+
+.all__doctor h1::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background-color: #f91944;
+  bottom: -15px;
+}
+
+.all__doctor p {
+  font-size: 19px;
+  color: #111;
+  text-align: center;
+  width: 600px;
+  margin: 10px auto;
+}
+
+@media only screen and (max-width: 998px) {
+  .doctor__container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .doctor__container {
+    grid-template-columns: 1fr;
+  }
+
+  .all__doctor p {
+    width: 90%;
+  }
+}

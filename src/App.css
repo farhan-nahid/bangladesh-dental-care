@@ -13,7 +13,9 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
+  background-color: #d3d3d341;
 }
 
 img {
