@@ -10,16 +10,37 @@
   display: none !important;
 }
 
-.banner__heading {
+.banner__area {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.banner__area h3 {
   width: 90%;
   font-size: 55px;
   line-height: 70px;
   letter-spacing: -2px;
   color: #1f2531;
   font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.banner__area p {
+  font-size: 19px;
+  color: #111;
+  text-align: justify;
+  margin-bottom: 20px;
 }
 
 .banner__image {
   height: 450px !important;
   object-fit: contain !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .banner__heading {
+    font-size: 40px;
+    line-height: 50px;
+  }
 }

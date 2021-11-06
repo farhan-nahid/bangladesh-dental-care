@@ -3,9 +3,11 @@ import { Toaster } from 'react-hot-toast';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './Contexts/AuthProvider';
+import AboutUs from './Pages/AboutUsPage/AboutUs/AboutUs';
 import Login from './Pages/AuthPage/Login/Login';
 import Register from './Pages/AuthPage/Register/Register';
 import Home from './Pages/HomePage/Home/Home';
+import Services from './Pages/HomePage/Services/Services';
 import NotFound from './Pages/NotFoundPage/NotFound';
 import Footer from './Pages/Shared/Footer/Footer';
 import NavBar from './Pages/Shared/NavBar/NavBar';
@@ -19,6 +21,8 @@ function App() {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/home' component={Home} />
+          <Route path='/about-us' component={AboutUs} />
+          <Route path='/services' component={Services} />
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
           <Route path='*' component={NotFound} />
