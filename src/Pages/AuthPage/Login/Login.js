@@ -8,11 +8,17 @@ import useAuth from '../../../hooks/useAuth';
 import './Login.css';
 
 const Login = () => {
+  const {
+    signInUsingEmail,
+    signInUsingGoogle,
+    signInUsingGitHub,
+    setIsLoading,
+  } = useAuth();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const location = useLocation();
   const history = useHistory();
-  const { signInUsingEmail, signInUsingGoogle, signInUsingGitHub } = useAuth();
   const redirect_URI = location.state?.from || '/';
 
   const handelEmailBlur = (e) => setEmail(e.target.value);
@@ -26,14 +32,22 @@ const Login = () => {
 
   const handleGoogleSignIn = () => {
     signInUsingGoogle()
-      .then(() => history.push(redirect_URI))
-      .catch((err) => toast.error(err.message));
+      .then(() => {
+        history.push(redirect_URI);
+        toast.success('Successfully Logged in!!!');
+      })
+      .catch((err) => toast.error(err.message))
+      .finally(() => setIsLoading(false));
   };
 
   const handleGitHubSignIn = () => {
     signInUsingGitHub()
-      .then(() => history.push(redirect_URI))
-      .catch((err) => toast.error(err.message));
+      .then(() => {
+        history.push(redirect_URI);
+        toast.success('Successfully Logged in!!!');
+      })
+      .catch((err) => toast.error(err.message))
+      .finally(() => setIsLoading(false));
   };
 
   return (

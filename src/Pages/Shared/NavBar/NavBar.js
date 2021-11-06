@@ -3,10 +3,11 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import logo from '../../../assets/images/logo.png';
 import useAuth from '../../../hooks/useAuth';
+import ProfilePopper from '../ProfilePopper/ProfilePopper';
 import './NavBar.css';
 
 const NavBar = () => {
-  const { loggedInUser, logOut } = useAuth();
+  const { loggedInUser } = useAuth();
 
   return (
     <Navbar className='navbar' expand='lg'>
@@ -38,17 +39,19 @@ const NavBar = () => {
             >
               Services
             </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to='/appointment'
+              activeClassName='active__item'
+            >
+              Appointment
+            </Nav.Link>
             {!loggedInUser ? (
-              <Nav.Link as={NavLink} to='/register' className='main__button'>
-                Register
+              <Nav.Link as={NavLink} to='/login' className='main__button'>
+                Log In
               </Nav.Link>
             ) : (
-              <>
-                <Nav.Link>{loggedInUser.displayName}</Nav.Link>
-                <Nav.Link className='main__button' onClick={logOut}>
-                  Logout
-                </Nav.Link>
-              </>
+              <ProfilePopper />
             )}
           </Nav>
         </Navbar.Collapse>

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './Contexts/AuthProvider';
 import AboutUs from './Pages/AboutUsPage/AboutUs/AboutUs';
+import Appointment from './Pages/AppointmentPage/Appointment';
 import Login from './Pages/AuthPage/Login/Login';
 import PrivateRoute from './Pages/AuthPage/PrivateRoute/PrivateRoute';
 import Register from './Pages/AuthPage/Register/Register';
@@ -37,6 +38,10 @@ function App() {
 
           <PrivateRoute path='/details/:id'>
             <ServiceDetail />
+          </PrivateRoute>
+
+          <PrivateRoute path='/appointment'>
+            <Appointment />
           </PrivateRoute>
           <Route path='*' component={NotFound} />
         </Switch>

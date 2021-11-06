@@ -50,8 +50,8 @@ const Footer = () => {
             <p className='mt-3'>
               <small>
                 {' '}
-                Copyright &copy; {new Date().getFullYear()}
-                by Farhan. <br /> All Rights Reserved.
+                Copyright &copy; {new Date().getFullYear()} by Farhan. <br />{' '}
+                All Rights Reserved.
               </small>
             </p>
           </Col>

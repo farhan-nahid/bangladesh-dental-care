@@ -15,6 +15,7 @@ import initializeAuthentication from '../Pages/AuthPage/Firebase/firebase.init';
 
 const useFirebase = () => {
   const [loggedInUser, setLoggedInUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   initializeAuthentication();
 
   const auth = getAuth();
@@ -47,25 +48,34 @@ const useFirebase = () => {
   // email password signIn
 
   const signInUsingEmail = (email, password) => {
+    setIsLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   // google signIn
 
   const signInUsingGoogle = () => {
+    setIsLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
 
   // gitHub signIn
 
   const signInUsingGitHub = () => {
+    setIsLoading(true);
     return signInWithPopup(auth, gitHubProvider);
   };
 
   // signOut function
 
   const logOut = () => {
-    signOut(auth).then(() => setLoggedInUser(null));
+    signOut(auth)
+      .then(() => {
+        setLoggedInUser(null);
+        toast.error('Logged Out!');
+      })
+      .catch((err) => toast.error(err.message))
+      .finally(() => setIsLoading(false));
   };
 
   // observe user state change
@@ -73,6 +83,7 @@ const useFirebase = () => {
   useEffect(() => {
     const unSubscrived = onAuthStateChanged(auth, (user) => {
       user ? setLoggedInUser(user) : setLoggedInUser(null);
+      setIsLoading(false);
     });
     return () => unSubscrived;
   }, [auth]);
@@ -84,6 +95,8 @@ const useFirebase = () => {
     logOut,
     signUpUsingEmail,
     signInUsingEmail,
+    setIsLoading,
+    isLoading,
   };
 };
 
