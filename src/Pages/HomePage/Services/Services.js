@@ -1,7 +1,6 @@
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
 import useServices from '../../../hooks/useServices';
-// import useServices from '../../../hooks/useServices';
 import Service from '../Service/Service';
 import './Services.css';
 

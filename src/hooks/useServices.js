@@ -7,9 +7,7 @@ const useServices = () => {
 
   useEffect(() => {
     axios
-      .get(
-        'https://raw.githubusercontent.com/farhan-nahid/router-task/main/src/allServices.json'
-      )
+      .get('https://api.npoint.io/b1dd76c81ad82ddc0a59')
       .then((res) => setServices(res.data))
       .catch((err) => toast.error('Something Went Wrong'));
   }, []);

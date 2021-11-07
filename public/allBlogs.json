@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "The Importance of Routine Dental Exams",
+    "description": "Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis... ",
+    "img": "https://i.ibb.co/y4Bq4GV/blog1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Oral Hygiene for Your Child",
+    "description": "Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis... ",
+    "img": "https://i.ibb.co/WD5Q6gK/blog2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Steps to Prevent Dental Caries",
+    "description": "Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis... ",
+    "img": "https://i.ibb.co/NyYG3hX/blog3.jpg"
+  }
+]

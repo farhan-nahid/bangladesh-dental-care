@@ -13,7 +13,6 @@ const AboutUs = () => {
           <img src={about} alt='about' />
         </div>
         <div className='content'>
-          B{' '}
           <div>
             <h2>Welcome To Bangladesh Dental Care </h2>
             <p>

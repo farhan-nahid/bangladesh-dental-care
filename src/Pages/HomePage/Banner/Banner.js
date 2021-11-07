@@ -22,7 +22,7 @@ const Banner = () => {
                 </p>
                 <button
                   className='main__button'
-                  onClick={() => history.push('/services')}
+                  onClick={() => history.push('/all-service')}
                 >
                   Learn More
                 </button>
@@ -46,7 +46,7 @@ const Banner = () => {
                 </p>
                 <button
                   className='main__button'
-                  onClick={() => history.push('/services')}
+                  onClick={() => history.push('/all-service')}
                 >
                   Learn More
                 </button>
@@ -70,7 +70,7 @@ const Banner = () => {
                 </p>
                 <button
                   className='main__button'
-                  onClick={() => history.push('/services')}
+                  onClick={() => history.push('/all-service')}
                 >
                   Learn More
                 </button>
