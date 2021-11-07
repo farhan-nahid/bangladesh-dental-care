@@ -15,9 +15,9 @@ const Service = ({ service: { id, name, img, price, description } }) => {
       <h3>Price : {price}</h3>
       <button
         className='main__button'
-        onClick={() => history.push(`/details/${id}`)}
+        onClick={() => history.push(`/services/${id}`)}
       >
-        Book Now
+        Book {name}
       </button>
     </div>
   );

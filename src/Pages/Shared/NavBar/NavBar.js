@@ -1,3 +1,5 @@
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
@@ -32,13 +34,7 @@ const NavBar = () => {
             <Nav.Link as={NavLink} to='/doctors' activeClassName='active__item'>
               Our Doctors
             </Nav.Link>
-            <Nav.Link
-              as={NavLink}
-              to='/services'
-              activeClassName='active__item'
-            >
-              Services
-            </Nav.Link>
+
             <Nav.Link
               as={NavLink}
               to='/appointment'
@@ -48,7 +44,7 @@ const NavBar = () => {
             </Nav.Link>
             {!loggedInUser ? (
               <Nav.Link as={NavLink} to='/login' className='main__button'>
-                Log In
+                <FontAwesomeIcon icon={faSignInAlt} /> Log In
               </Nav.Link>
             ) : (
               <ProfilePopper />
