@@ -1,6 +1,11 @@
 .not__found {
   margin: 100px auto;
   width: 600px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0px 0px 10px lightgray;
 }
 
 .not__found img {

@@ -1,3 +1,5 @@
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useRef, useState } from 'react';
 import { Overlay, Popover } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
@@ -29,7 +31,7 @@ const ProfilePopper = () => {
             <h6>{loggedInUser.displayName}</h6>
             <p>{loggedInUser.email}</p>
             <button onClick={logOut} className='main__button'>
-              Log Out
+              <FontAwesomeIcon icon={faSignOutAlt} /> Log Out
             </button>
           </Popover.Body>
         </Popover>

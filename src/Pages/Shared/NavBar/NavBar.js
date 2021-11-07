@@ -31,10 +31,16 @@ const NavBar = () => {
             >
               About Us
             </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to='/all-service'
+              activeClassName='active__item'
+            >
+              Services
+            </Nav.Link>
             <Nav.Link as={NavLink} to='/doctors' activeClassName='active__item'>
               Our Doctors
             </Nav.Link>
-
             <Nav.Link
               as={NavLink}
               to='/appointment'

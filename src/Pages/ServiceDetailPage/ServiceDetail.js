@@ -1,25 +1,36 @@
 import React from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { Spinner } from 'react-bootstrap';
+import { useHistory, useLocation } from 'react-router-dom';
 import useServices from '../../hooks/useServices';
 import './ServiceDetail.css';
 
 const ServiceDetail = () => {
   const [services] = useServices();
-  const { id } = useParams();
-  console.log(id);
   const history = useHistory();
+  const location = useLocation();
+
+  //useParams is not working in private route. thats why i using useLocation
+  const id = location.pathname.slice(10, 11);
   const selected = services.find((service) => service.id === Number(id));
-  console.log(selected);
+
   return (
-    <section className='container service__details'>
-      <img src={selected?.img} alt={selected?.name} />
-      <h3>{selected?.name}</h3>
-      <p>{selected?.description}</p>
-      <h3>Price : {selected?.price}</h3>
-      <button className='main__button' onClick={() => history.goBack()}>
-        Back
-      </button>
-    </section>
+    <>
+      {selected ? (
+        <section className='container service__details'>
+          <img src={selected.img} alt={selected.name} />
+          <h3>{selected.name}</h3>
+          <p>{selected.description}</p>
+          <h3>Price : {selected.price}</h3>
+          <button className='main__button' onClick={() => history.goBack()}>
+            Back
+          </button>
+        </section>
+      ) : (
+        <div className='d-flex mt-5 pt-5 justify-content-center'>
+          <Spinner animation='border' />
+        </div>
+      )}
+    </>
   );
 };
 

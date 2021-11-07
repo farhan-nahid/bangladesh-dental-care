@@ -10,6 +10,7 @@ import PrivateRoute from './Pages/AuthPage/PrivateRoute/PrivateRoute';
 import Register from './Pages/AuthPage/Register/Register';
 import Doctors from './Pages/DoctorsPage/Doctors/Doctors';
 import Home from './Pages/HomePage/Home/Home';
+import Services from './Pages/HomePage/Services/Services';
 import NotFound from './Pages/NotFoundPage/NotFound';
 import ServiceDetail from './Pages/ServiceDetailPage/ServiceDetail';
 import Footer from './Pages/Shared/Footer/Footer';
@@ -25,18 +26,13 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route path='/home' component={Home} />
           <Route path='/about-us' component={AboutUs} />
+          <Route path='/doctors' component={Doctors} />
+          <Route path='/all-service' component={Services} />
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
-          <Route path='/doctors' component={Doctors} />
-
-          <Route path='/services/:id'>
+          <PrivateRoute path='/services/:id'>
             <ServiceDetail />
-          </Route>
-
-          {/* <PrivateRoute path='/services/:id' exact={true}>
-            <ServiceDetail />
-          </PrivateRoute> */}
-
+          </PrivateRoute>
           <PrivateRoute path='/appointment'>
             <Appointment />
           </PrivateRoute>
