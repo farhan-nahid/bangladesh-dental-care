@@ -23,8 +23,16 @@
   margin-bottom: 30px;
 }
 
+.not__found .fa-arrow-left {
+  margin-right: 20px;
+}
+
 .not__found p {
   font-size: 25px;
   color: #f91944;
   text-align: center;
+}
+
+.not__found .main__button {
+  border-radius: 15px;
 }

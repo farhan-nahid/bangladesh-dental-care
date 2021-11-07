@@ -20,3 +20,7 @@
   font-size: 17px !important;
   padding: 0 10px;
 }
+
+.service__details .fa-arrow-left {
+  margin-right: 20px;
+}

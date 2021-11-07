@@ -1,3 +1,5 @@
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Spinner } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router-dom';
@@ -21,8 +23,8 @@ const ServiceDetail = () => {
           <h3>{selected.name}</h3>
           <p>{selected.description}</p>
           <h3>Price : {selected.price}</h3>
-          <button className='main__button' onClick={() => history.goBack()}>
-            Back
+          <button className='main__button' onClick={() => history.push('/')}>
+            <FontAwesomeIcon icon={faArrowLeft} /> Back to Home
           </button>
         </section>
       ) : (

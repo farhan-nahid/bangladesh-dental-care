@@ -36,3 +36,7 @@
   font-size: 17px !important;
   padding: 0 10px;
 }
+
+.service__card button {
+  border-radius: 15px;
+}

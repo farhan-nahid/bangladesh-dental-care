@@ -9,6 +9,15 @@
   margin: 100px auto;
 }
 
+.all__service__button {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.all__service__button button {
+  border-radius: 10px !important;
+}
+
 .all__service h1 {
   font-size: 30px;
   margin-bottom: 30px;

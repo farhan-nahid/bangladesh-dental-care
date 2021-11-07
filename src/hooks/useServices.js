@@ -7,7 +7,7 @@ const useServices = () => {
 
   useEffect(() => {
     axios
-      .get('https://api.npoint.io/b1dd76c81ad82ddc0a59')
+      .get('https://api.npoint.io/5b877138b355b781bfc2')
       .then((res) => setServices(res.data))
       .catch((err) => toast.error('Something Went Wrong'));
   }, []);

@@ -40,5 +40,26 @@
     "name": "Root Canal Treatment",
     "price": 700,
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam doloribus quas voluptatem inventore quo nisi labore possimus necessitatibus cupiditate deserunt illo exercitationem, id ipsam voluptas nostrum non nihil ab error praesentium. A impedit quae iure excepturi mollitia doloribus pariatur molestiae sint, minus voluptatibus sunt distinctio commodi. Enim magnam quam illo?"
+  },
+  {
+    "id": 7,
+    "img": "https://i.ibb.co/WvgnkXD/service7.jpg",
+    "name": "Tooth Protection",
+    "price": 700,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam doloribus quas voluptatem inventore quo nisi labore possimus necessitatibus cupiditate deserunt illo exercitationem, id ipsam voluptas nostrum non nihil ab error praesentium. A impedit quae iure excepturi mollitia doloribus pariatur molestiae sint, minus voluptatibus sunt distinctio commodi. Enim magnam quam illo?"
+  },
+  {
+    "id": 8,
+    "img": "https://i.ibb.co/ZVFJss3/service8.jpg",
+    "name": "Teeth Cleaning",
+    "price": 700,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam doloribus quas voluptatem inventore quo nisi labore possimus necessitatibus cupiditate deserunt illo exercitationem, id ipsam voluptas nostrum non nihil ab error praesentium. A impedit quae iure excepturi mollitia doloribus pariatur molestiae sint, minus voluptatibus sunt distinctio commodi. Enim magnam quam illo?"
+  },
+  {
+    "id": 9,
+    "img": "https://i.ibb.co/RTW7cTv/service9.jpg",
+    "name": "Cracked Tooth",
+    "price": 700,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam doloribus quas voluptatem inventore quo nisi labore possimus necessitatibus cupiditate deserunt illo exercitationem, id ipsam voluptas nostrum non nihil ab error praesentium. A impedit quae iure excepturi mollitia doloribus pariatur molestiae sint, minus voluptatibus sunt distinctio commodi. Enim magnam quam illo?"
   }
 ]

@@ -1,8 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import './Service.css';
 
-const Service = ({ service: { id, name, img, price, description } }) => {
+const SingleService = ({ service: { id, name, img, price, description } }) => {
   const history = useHistory();
 
   return (
@@ -23,4 +22,4 @@ const Service = ({ service: { id, name, img, price, description } }) => {
   );
 };
 
-export default Service;
+export default SingleService;
