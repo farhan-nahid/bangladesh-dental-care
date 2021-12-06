@@ -1,6 +1,6 @@
 import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useHistory } from 'react-router-dom';
 import login from '../../../assets/images/login.png';
@@ -18,6 +18,10 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const history = useHistory();
+
+  useEffect(() => {
+    document.title = 'Register | Bangladesh Dental care';
+  }, []);
 
   // set input values
 

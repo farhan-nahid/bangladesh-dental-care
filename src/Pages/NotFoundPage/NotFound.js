@@ -1,12 +1,16 @@
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import error from '../../assets/images/404.png';
 import './NotFound.css';
 
 const NotFound = () => {
   const history = useHistory();
+
+  useEffect(() => {
+    document.title = 'NotFound | Bangladesh Dental care';
+  }, []);
 
   return (
     <div className='container not__found'>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
 import useServices from '../../hooks/useServices';
@@ -7,6 +7,10 @@ import './Appointment.css';
 const Appointment = () => {
   const { loggedInUser } = useAuth();
   const [services] = useServices();
+
+  useEffect(() => {
+    document.title = 'Appointment | Bangladesh Dental care';
+  }, []);
 
   return (
     <section className='container appointment'>

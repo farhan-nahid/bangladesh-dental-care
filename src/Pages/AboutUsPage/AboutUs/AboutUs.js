@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import about from '../../../assets/images/about-us.jpg';
 import './AboutUs.css';
@@ -10,6 +10,10 @@ const AboutUs = () => {
   const skill4 = 75;
   const skill5 = 70;
   const skill6 = 65;
+
+  useEffect(() => {
+    document.title = 'About Us | Bangladesh Dental care';
+  }, []);
 
   return (
     <div className='about__us container'>

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Spinner } from 'react-bootstrap';
 import useServices from '../../../hooks/useServices';
 import SingleService from '../SingleService/SingleService';
 
 const AllService = () => {
   const [services] = useServices();
+  useEffect(() => {
+    document.title = 'Services | Bangladesh Dental care';
+  }, []);
 
   return (
     <section className='container all__service'>

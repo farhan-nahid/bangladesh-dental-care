@@ -1,6 +1,6 @@
 import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import login from '../../../assets/images/login.png';
@@ -20,6 +20,10 @@ const Login = () => {
   const location = useLocation();
   const history = useHistory();
   const redirect_URI = location.state?.from || '/';
+
+  useEffect(() => {
+    document.title = 'Login | Bangladesh Dental care';
+  }, []);
 
   const handelEmailBlur = (e) => setEmail(e.target.value);
   const handlePasswordBlur = (e) => setPassword(e.target.value);

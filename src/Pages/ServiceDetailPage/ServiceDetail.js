@@ -1,18 +1,23 @@
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Spinner } from 'react-bootstrap';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import useServices from '../../hooks/useServices';
 import './ServiceDetail.css';
 
 const ServiceDetail = () => {
   const [services] = useServices();
   const history = useHistory();
-  const location = useLocation();
+  // const location = useLocation();
+  const { id } = useParams();
+
+  useEffect(() => {
+    document.title = 'Service Details | Bangladesh Dental care';
+  }, []);
 
   //useParams is not working in private route. thats why i using useLocation
-  const id = location.pathname.slice(10, 11);
+  // const id = location.pathname.slice(10, 11);
   const selected = services.find((service) => service.id === Number(id));
 
   return (

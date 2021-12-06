@@ -9,6 +9,10 @@ const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
 
   useEffect(() => {
+    document.title = 'Doctors | Bangladesh Dental care';
+  }, []);
+
+  useEffect(() => {
     axios
       .get('https://api.npoint.io/354efa7b35aed4c43fee')
       .then((res) => setDoctors(res.data))
